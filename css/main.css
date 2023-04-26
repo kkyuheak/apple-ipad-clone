@@ -1,12 +1,21 @@
+html.fixed {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+
 body {
+  height: 100000px;
   font-size: 16px;
   line-height: 1;
   font-family: "Roboto", "Noto Sans KR", sans-serif;
   word-break: keep-all;
+  color: #1d1d1d;
 }
 
 a {
   text-decoration: none;
+  color: #1d1d1d;
 }
 
 /* header */
@@ -143,11 +152,13 @@ header .search-wrap {
   top: 0;
   left: 0;
   width: 100%;
+  display: none;
 }
 
 header .search {
   max-width: 680px;
   margin: 0 auto;
+  position: relative;
 }
 
 header .search .shadow {
@@ -205,11 +216,39 @@ header .search .search-closer:hover {
 }
 
 header .search .autocompletes {
+  width: 100%;
+  padding: 26px 40px 20px;
+  border-radius: 0 0 18px 18px;
+  box-sizing: border-box;
+  background-color: #fff;
+  position: absolute;
+  top: 44px;
+  left: 0;
 }
 
-header .search .autocompletes ul {
+header .search .autocompletes h3 {
+  font-size: 12px;
+  color: #6e6e6e;
+  margin-bottom: 12px;
 }
 
+.autocompletes ul li a {
+  display: block;
+  margin: 0 -14px;
+  padding: 10px 0 10px 30px;
+  font-size: 14px;
+}
+
+.autocompletes ul li a:hover {
+  background-color: #f5f5f5;
+  color: #0071e3;
+}
+
+/* header class searching */
 header.searching .menu > li {
   display: none;
+}
+
+header.searching .search-wrap {
+  display: block;
 }
