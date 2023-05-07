@@ -69,3 +69,20 @@ const hideSearch = () => {
 searchStarterEl.addEventListener("click", showSearch);
 searchCloserEl.addEventListener("click", hideSearch);
 searchShadowEl.addEventListener("click", hideSearch);
+
+//요소의 가시성 관찰
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      // entry.target.classList.remove("show");
+      return;
+    }
+    entry.target.classList.add("show");
+  });
+});
+
+const infoEls = document.querySelectorAll(".info");
+
+infoEls.forEach((el) => {
+  io.observe(el);
+});
