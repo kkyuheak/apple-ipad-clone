@@ -72,6 +72,16 @@ searchStarterEl.addEventListener("click", showSearch);
 searchCloserEl.addEventListener("click", hideSearch);
 searchShadowEl.addEventListener("click", hideSearch);
 
+// 모바일 header menu click
+const menuStartEl = document.querySelector("header .menu-starter");
+menuStartEl.addEventListener("click", () => {
+  if (headerEl.classList.contains("menuing")) {
+    headerEl.classList.remove("menuing");
+  } else {
+    headerEl.classList.add("menuing");
+  }
+});
+
 //요소의 가시성 관찰
 const io = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
